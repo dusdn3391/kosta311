@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Baker's Atelier | 나의 제과제빵 기록</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <!-- ─── HEADER ─── -->
+    <header>
+      <div class="logo">The Baker's <span>Atelier</span></div>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">소개</a>
+        <a href="#recipes">레시피</a>
+      </nav>
+    </header>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+      <!-- 왼쪽: 프로필 사진 영역 -->
+      <div class="hero-portrait">
+        <img src="../img/me.jpg" alt="프로필" />
+        <!-- <div class="portrait-placeholder">
+          <svg
+            width="90"
+            height="90"
+            viewBox="0 0 90 90"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="45"
+              cy="34"
+              r="20"
+              stroke="#7c5c42"
+              stroke-width="1.5"
+            />
+            <path
+              d="M10 82c0-19.33 15.67-35 35-35s35 15.67 35 35"
+              stroke="#7c5c42"
+              stroke-width="1.5"
+            />
+          </svg>
+          <p>나의 사진을 여기에</p>
+        </div> -->
+      </div>
+
+      <!-- 오른쪽: 소개 텍스트 -->
+      <div class="hero-text">
+        <span class="hero-eyebrow">Baker · Pâtissière · Seoul</span>
+        <h1 class="hero-title">
+          밀가루와<br />버터,<br /><em>그리고 시간</em>
+        </h1>
+        <div class="hero-divider"></div>
+        <p class="hero-desc">
+          한때 제빵사였던 제가 가장 사랑했던,<br />
+          그리고 당신과 나누고 싶은 레시피들입니다.<br />
+          오븐 속에서 빵이 부풀어 오르는 그 순간을 —<br />
+          이 작은 공간에 담아냅니다.
+        </p>
+        <a href="#gallery" class="btn-outline">작품 보러가기</a>
+        <div class="hero-num">01</div>
+      </div>
+    </section>
+
+    <!-- ─── GALLERY SLIDER ─── -->
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-header reveal">
+        <div class="gallery-header-left">
+          <span class="eyebrow">My Creations</span>
+          <h2>내가 만든<br /><em>케이크들</em></h2>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prev" aria-label="이전">
+            &#8592;
+          </button>
+          <span class="slider-count" id="countDisplay">1 / 6</span>
+          <button class="slider-btn" id="next" aria-label="다음">
+            &#8594;
+          </button>
+        </div>
+      </div>
+
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slider-track" id="sliderTrack">
+          <!-- 카드 1 -->
+          <div class="cake-card">
+            <div class="cake-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=700"
+                alt="초콜릿 케이크"
+                loading="lazy"
+              />
+              <div class="cake-overlay"></div>
+              <span class="cake-label">Patisserie</span>
+            </div>
+            <div class="cake-info">
+              <h4>가나슈 초콜릿 레이어 케이크</h4>
+              <p>
+                72% 다크 초콜릿으로 만든 깊고 진한 가나슈와 부드러운 시트의
+                완벽한 조화.
+              </p>
+              <span class="date">2024 · Autumn</span>
+            </div>
+          </div>
+
+          <!-- 카드 2 -->
+          <div class="cake-card">
+            <div class="cake-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=700"
+                alt="딸기 케이크"
+                loading="lazy"
+              />
+              <div class="cake-overlay"></div>
+              <span class="cake-label">Patisserie</span>
+            </div>
+            <div class="cake-info">
+              <h4>클래식 딸기 생크림 케이크</h4>
+              <p>가장 기본적이지만 가장 사랑받는, 완벽한 시트와 크림의 조화.</p>
+              <span class="date">2024 · Spring</span>
+            </div>
+          </div>
+
+          <!-- 카드 3 -->
+          <div class="cake-card">
+            <div class="cake-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=700"
+                alt="바닐라 앙트르메"
+                loading="lazy"
+              />
+              <div class="cake-overlay"></div>
+              <span class="cake-label">Entremet</span>
+            </div>
+            <div class="cake-info">
+              <h4>바닐라 앙트르메</h4>
+              <p>
+                마다가스카르 바닐라와 가벼운 무스크림으로 완성된 프렌치 스타일
+                케이크.
+              </p>
+              <span class="date">2024 · Summer</span>
+            </div>
+          </div>
+
+          <!-- 카드 4 -->
+          <div class="cake-card">
+            <div class="cake-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=700"
+                alt="레몬 타르트"
+                loading="lazy"
+              />
+              <div class="cake-overlay"></div>
+              <span class="cake-label">Tarte</span>
+            </div>
+            <div class="cake-info">
+              <h4>레몬 크림 타르트</h4>
+              <p>
+                상큼한 레몬 커드와 바삭한 파트 쉬크레의 균형, 이탈리안 머랭으로
+                마무리.
+              </p>
+              <span class="date">2023 · Winter</span>
+            </div>
+          </div>
+
+          <!-- 카드 5 -->
+          <div class="cake-card">
+            <div class="cake-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=700"
+                alt="오페라 케이크"
+                loading="lazy"
+              />
+              <div class="cake-overlay"></div>
+              <span class="cake-label">Classic</span>
+            </div>
+            <div class="cake-info">
+              <h4>오페라 케이크</h4>
+              <p>
+                에스프레소 버터크림과 초콜릿 가나슈가 층층이 쌓인 프렌치
+                클래식의 정수.
+              </p>
+              <span class="date">2023 · Spring</span>
+            </div>
+          </div>
+
+          <!-- 카드 6: 추가 자리 -->
+          <div class="cake-card">
+            <div class="cake-img-wrap">
+              <div class="img-placeholder">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="6"
+                    y="14"
+                    width="38"
+                    height="28"
+                    rx="1"
+                    stroke="#d4c4a8"
+                    stroke-width="1.2"
+                  />
+                  <circle
+                    cx="19"
+                    cy="24"
+                    r="5"
+                    stroke="#d4c4a8"
+                    stroke-width="1.2"
+                  />
+                  <path
+                    d="M6 34l10-8 8 7 7-5 13 11"
+                    stroke="#d4c4a8"
+                    stroke-width="1.2"
+                  />
+                  <line
+                    x1="34"
+                    y1="8"
+                    x2="34"
+                    y2="18"
+                    stroke="#d4c4a8"
+                    stroke-width="1.2"
+                  />
+                  <line
+                    x1="29"
+                    y1="13"
+                    x2="39"
+                    y2="13"
+                    stroke="#d4c4a8"
+                    stroke-width="1.2"
+                  />
+                </svg>
+                <span>사진 추가하기</span>
+              </div>
+              <div class="cake-overlay"></div>
+              <span class="cake-label">Coming Soon</span>
+            </div>
+            <div class="cake-info">
+              <h4>나의 다음 작품</h4>
+              <p>
+                새로운 레시피를 연구 중입니다. 곧 완성되어 이 자리를 채울
+                예정입니다.
+              </p>
+              <span class="date">2025 · TBA</span>
+            </div>
+          </div>
+        </div>
+        <!-- /slider-track -->
+      </div>
+      <!-- /slider-wrapper -->
+
+      <div class="slider-progress-wrap">
+        <div
+          class="slider-progress"
+          id="sliderProgress"
+          style="width: 16.66%"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+      <div class="about-section">
+        <div class="about-left reveal">
+          <span class="eyebrow">My Story</span>
+          <h2>밀가루 향기 가득했던,<br /><em>그때의 기록</em></h2>
+          <p>
+            오븐 속에서 빵이 부풀어 오르는 순간을 사랑했습니다. 새벽 공기를
+            가르며 반죽을 치대던 그 열정을, 이제 이 작은 공간에 레시피로
+            담아내려 합니다.
+          </p>
+          <p>
+            꿈은 형태를 바꾸었지만, 맛있는 빵과 과자를 향한 마음은 변함없습니다.
+            여기 담긴 모든 레시피는 저의 손으로 수없이 반복하며 완성된
+            것들입니다.
+          </p>
+          <div class="about-quote">
+            <blockquote>
+              "좋은 빵은 시간을 속이지 않는다 —<br />재료와 손과 기다림이 모두
+              필요하다."
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="about-right reveal">
+          <img
+            src="https://images.unsplash.com/photo-1511081134293-87588b4b1a41?q=80&w=700"
+            alt="제빵사 시절"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RECIPES HIGHLIGHT ─── -->
+    <section class="recipes-section" id="recipes">
+      <div class="recipes-header reveal">
+        <span class="eyebrow">Highlights</span>
+        <h2>나의 대표 <em>레시피</em></h2>
+      </div>
+
+      <div class="recipes-grid">
+        <div class="recipe-item reveal">
+          <span class="ri-cat">Patisserie</span>
+          <h3 class="ri-title">클래식 딸기<br />생크림 케이크</h3>
+          <p class="ri-desc">
+            가장 기본적이지만, 가장 사랑받는 완벽한 시트와 크림의 조화.
+          </p>
+          <span class="ri-arrow">레시피 보기 →</span>
+        </div>
+
+        <div class="recipe-item reveal">
+          <span class="ri-cat">Boulangerie</span>
+          <h3 class="ri-title">천연발효<br />사워도우</h3>
+          <p class="ri-desc">
+            긴 시간과 정성이 만들어낸 깊은 풍미와 쫄깃한 식감의 결정체.
+          </p>
+          <span class="ri-arrow">레시피 보기 →</span>
+        </div>
+
+        <div class="recipe-item reveal">
+          <span class="ri-cat">Patisserie</span>
+          <h3 class="ri-title">더블 초콜릿<br />칩 쿠키</h3>
+          <p class="ri-desc">겉은 바삭하고 속은 촉촉한, 진한 초콜릿의 유혹.</p>
+          <span class="ri-arrow">레시피 보기 →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <div class="footer-logo">The Baker's <span>Atelier</span></div>
+      <p class="footer-copy">&copy; 2025 · All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
