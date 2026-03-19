@@ -470,6 +470,7 @@ nav a:hover {
   font-weight: 300;
   line-height: 1.15;
   margin-bottom: 36px;
+  white-space: nowrap;
 }
 .about-left h2 em {
   font-style: italic;

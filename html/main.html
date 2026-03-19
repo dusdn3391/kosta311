@@ -81,7 +81,7 @@
           <button class="slider-btn" id="prev" aria-label="이전">
             &#8592;
           </button>
-          <span class="slider-count" id="countDisplay">1 / 6</span>
+          <span class="slider-count" id="countDisplay"></span>
           <button class="slider-btn" id="next" aria-label="다음">
             &#8594;
           </button>
@@ -154,8 +154,10 @@
           </div>
 
           <!-- 카드 4 -->
-          <div class="cake-card"             onclick="location.href = './recipe-tiramisu.html'"
->
+          <div
+            class="cake-card"
+            onclick="location.href = './recipe-tiramisu.html'"
+          >
             <div class="cake-img-wrap">
               <img src="../img/tiramisu.jpg" alt="티라미수" loading="lazy" />
               <div class="cake-overlay"></div>
@@ -169,22 +171,15 @@
           </div>
 
           <!-- 카드 5 -->
-          <div class="cake-card">
+          <div class="cake-card" onclick="location.href = './madulen.html'">
             <div class="cake-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=700"
-                alt="오페라 케이크"
-                loading="lazy"
-              />
+              <img src="../img/madulen.jpg" alt="마들렌" loading="lazy" />
               <div class="cake-overlay"></div>
               <span class="cake-label">Classic</span>
             </div>
             <div class="cake-info">
-              <h4>오페라 케이크</h4>
-              <p>
-                에스프레소 버터크림과 초콜릿 가나슈가 층층이 쌓인 프렌치
-                클래식의 정수.
-              </p>
+              <h4>마들렌</h4>
+              <p>버터의 풍미와 부드러운 조개모양의 마들렌</p>
               <span class="date">2023 · Spring</span>
             </div>
           </div>
@@ -291,10 +286,7 @@
         </div>
 
         <div class="about-right reveal">
-          <img
-            src="https://images.unsplash.com/photo-1511081134293-87588b4b1a41?q=80&w=700"
-            alt="제빵사 시절"
-          />
+          <img src="../img/wedding.jpg" alt="" />
         </div>
       </div>
     </section>
@@ -307,28 +299,37 @@
       </div>
 
       <div class="recipes-grid">
-        <div class="recipe-item reveal">
+        <div
+          class="recipe-item reveal"
+          onclick="location.href = './recipe-normalcake.html'"
+        >
           <span class="ri-cat">Patisserie</span>
-          <h3 class="ri-title">클래식 딸기<br />생크림 케이크</h3>
+          <h3 class="ri-title">클래식 <br />생크림 케이크</h3>
           <p class="ri-desc">
             가장 기본적이지만, 가장 사랑받는 완벽한 시트와 크림의 조화.
           </p>
           <span class="ri-arrow">레시피 보기 →</span>
         </div>
 
-        <div class="recipe-item reveal">
-          <span class="ri-cat">Boulangerie</span>
-          <h3 class="ri-title">천연발효<br />사워도우</h3>
-          <p class="ri-desc">
-            긴 시간과 정성이 만들어낸 깊은 풍미와 쫄깃한 식감의 결정체.
-          </p>
+        <div
+          class="recipe-item reveal"
+          onclick="location.href = './chocolate.html'"
+        >
+          <span class="ri-cat">CHOCOLATE</span>
+          <h3 class="ri-title">가나슈<br />초콜릿</h3>
+          <p class="ri-desc">부드러운 가나슈가 들어있는 봉봉쇼콜라</p>
           <span class="ri-arrow">레시피 보기 →</span>
         </div>
 
-        <div class="recipe-item reveal" onclick="location.href = './chocomuffin.html'">
+        <div
+          class="recipe-item reveal"
+          onclick="location.href = './chocomuffin.html'"
+        >
           <span class="ri-cat">Patisserie</span>
-          <h3 class="ri-title">초코 머핀 <br /></h3>
-          <p class="ri-desc">진한 초콜릿이 가득 들어간 컵케이크.</p>
+          <h3 class="ri-title"><br /></h3>
+          <p class="ri-desc">
+            진한 초콜릿의 풍미와 부드러운 가나슈가 들어있는 초콜릿
+          </p>
           <span class="ri-arrow">레시피 보기 →</span>
         </div>
       </div>
