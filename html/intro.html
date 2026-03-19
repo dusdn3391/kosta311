@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intro</title>
+  <link rel="stylesheet" href="../css/intro.css" />
+</head>
+<body>
+  <div id="particles"></div>
+
+  <div id="scene">
+    <div id="title-text">Happy Birthday</div>
+
+    <svg id="cake-svg" width="240" height="220" viewBox="0 0 240 220">
+      <!-- 초 (크림색/아이보리) -->
+      <rect x="62"  y="65" width="10" height="30" rx="2" fill="#e8d5a3"/>
+      <rect x="115" y="65" width="10" height="30" rx="2" fill="#d4b896"/>
+      <rect x="168" y="65" width="10" height="30" rx="2" fill="#c9a87c"/>
+
+      <!-- 빛 (따뜻한 황금빛) -->
+      <circle class="glow-ring" cx="67"  cy="55" r="18" fill="#d4900a" opacity="0.2"/>
+      <circle class="glow-ring" cx="120" cy="55" r="22" fill="#c87820" opacity="0.2" style="animation-delay:0.3s"/>
+      <circle class="glow-ring" cx="173" cy="58" r="18" fill="#d4900a" opacity="0.2" style="animation-delay:0.15s"/>
+
+      <!-- 불꽃 (황금 계열) -->
+      <g id="flame1" class="flame-group">
+        <ellipse cx="67" cy="58" rx="5"   ry="8"   fill="#c86010"/>
+        <ellipse cx="67" cy="57" rx="3"   ry="5"   fill="#e8a020"/>
+        <ellipse cx="67" cy="59" rx="1.5" ry="2.5" fill="#fde080"/>
+      </g>
+      <g id="flame2" class="flame-group">
+        <ellipse cx="120" cy="56" rx="6"   ry="10" fill="#b85010"/>
+        <ellipse cx="120" cy="55" rx="3.5" ry="6"  fill="#d89020"/>
+        <ellipse cx="120" cy="57" rx="1.8" ry="3"  fill="#fde898"/>
+      </g>
+      <g id="flame3" class="flame-group">
+        <ellipse cx="173" cy="56" rx="5"   ry="8"   fill="#c86010"/>
+        <ellipse cx="173" cy="55" rx="3"   ry="5"   fill="#e8a020"/>
+        <ellipse cx="173" cy="57" rx="1.5" ry="2.5" fill="#fde080"/>
+      </g>
+
+      <!-- 연기 -->
+      <g id="smoke-g">
+        <circle class="smoke-puff" cx="67"  cy="58" r="5" fill="#c8b090" style="animation-delay:0s"/>
+        <circle class="smoke-puff" cx="120" cy="44" r="6" fill="#b89878" style="animation-delay:0.08s"/>
+        <circle class="smoke-puff" cx="173" cy="56" r="5" fill="#c8b090" style="animation-delay:0.04s"/>
+      </g>
+
+      <!-- 위 tier (크림 베이지) -->
+      <rect x="60" y="94"  width="120" height="38" rx="4" fill="#d4b896"/>
+      <rect x="60" y="94"  width="120" height="10" rx="4" fill="#e8d0a8"/>
+      <ellipse cx="80"  cy="94" rx="7" ry="5" fill="#f0e0c0"/>
+      <ellipse cx="110" cy="94" rx="7" ry="5" fill="#f0e0c0"/>
+      <ellipse cx="140" cy="94" rx="7" ry="5" fill="#f0e0c0"/>
+      <ellipse cx="165" cy="94" rx="6" ry="4" fill="#f0e0c0"/>
+      <line x1="80"  y1="104" x2="80"  y2="132" stroke="#c8a070" stroke-width="1" opacity="0.4"/>
+      <line x1="110" y1="104" x2="110" y2="132" stroke="#c8a070" stroke-width="1" opacity="0.4"/>
+      <line x1="140" y1="104" x2="140" y2="132" stroke="#c8a070" stroke-width="1" opacity="0.4"/>
+
+      <!-- 아래 tier (초콜릿 브라운) -->
+      <rect x="40" y="132" width="160" height="52" rx="5" fill="#6b3a1f" />
+      <rect x="40" y="132" width="160" height="14" rx="5" fill="#8b5030" />
+      <ellipse cx="60"  cy="132" rx="8" ry="6" fill="#e8d0a8"/>
+      <ellipse cx="90"  cy="132" rx="8" ry="6" fill="#e8d0a8"/>
+      <ellipse cx="120" cy="132" rx="8" ry="6" fill="#e8d0a8"/>
+      <ellipse cx="150" cy="132" rx="8" ry="6" fill="#e8d0a8"/>
+      <ellipse cx="178" cy="132" rx="7" ry="5" fill="#e8d0a8"/>
+      <circle cx="65"  cy="155" r="4" fill="#d4a060"/>
+      <circle cx="90"  cy="162" r="3" fill="#e8c888"/>
+      <circle cx="115" cy="155" r="4" fill="#d4a060"/>
+      <circle cx="140" cy="162" r="3" fill="#e8c888"/>
+      <circle cx="165" cy="155" r="4" fill="#d4a060"/>
+
+      <!-- 접시 -->
+      <ellipse cx="120" cy="184" rx="92" ry="9" fill="#c8a070" opacity="0.8"/>
+      <ellipse cx="120" cy="183" rx="88" ry="7" fill="none" stroke="#f0e0c0" stroke-width="1" opacity="0.25"/>
+    </svg>
+  </div>
+
+  <div class="hint">click to make a wish</div>
+  <div id="redirect-msg">
+    ✦ 소원이 이루어지길 ✦<br>
+    <span>잠시 후 이동합니다</span>
+  </div>
+
+  <script src="../js/intro.js"></script>
+</body>
+</html>
