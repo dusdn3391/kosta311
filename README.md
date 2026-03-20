@@ -1,6 +1,6 @@
 # 🎂 My Cake Recipe
 
-유럽풍 베이지 & 초콜릿 테마의 케이크와 빵 레시피가 있는 웹페이지입니다.
+유럽풍 베이지 & 초콜릿 테마의 케이크와 빵 레시피가 있는 웹페이지입니다.  
 케이크 위 촛불이 일렁이고, 화면을 클릭하면 촛불이 꺼지며 메인 페이지로 자연스럽게 전환됩니다.
 
 ---
@@ -16,10 +16,11 @@
 ├── recipe-*.html   # 레시피 페이지 등등
 └── README.md
 ```
+
 ---
- 
+
 ## 🎨 CSS 특징
- 
+
 | 애니메이션 | 설명 |
 |------------|------|
 | `flicker` | 촛불이 불규칙하게 일렁이는 효과. 각 불꽃마다 duration을 다르게 설정해 자연스러움 연출 |
@@ -28,15 +29,15 @@
 | `smoke-rise` | 촛불이 꺼진 후 연기가 위로 퍼지며 사라짐 |
 | `pulse` | 하단 힌트 텍스트가 부드럽게 깜빡임 |
 | `fade-in` | 이동 안내 메시지가 아래에서 위로 페이드인 |
- 
+
 - 배경은 `radial-gradient`로 중앙이 밝은 짙은 초콜릿 분위기 연출
 - 전체 폰트는 `Georgia` serif 계열로 유럽풍 감성 적용
 - 케이크 SVG에 `drop-shadow` 필터로 황금빛 그림자 추가
- 
+
 ---
- 
+
 ## ⚙️ JS 특징
- 
+
 | 함수 | 역할 |
 |------|------|
 | `createParticles(count)` | 황금빛 먼지 파티클을 동적으로 생성. 크기·위치·색상·딜레이를 랜덤으로 설정 |
@@ -44,17 +45,21 @@
 | `showRedirectMessage()` | 힌트 텍스트 숨기고 이동 안내 메시지 표시 |
 | `goToMain()` | `window.location.href`로 main.html 이동 |
 | `handleClick()` | 클릭 이벤트 등록. `blown` 플래그로 중복 클릭 방지 |
- 
+
 - 외부 라이브러리 없이 Vanilla JS로만 구현
 - `setTimeout`으로 촛불 끄기(즉시) → 메시지 전환(0.45초) → 페이지 이동(2초) 순서로 타이밍 제어
- 
+
 ---
+
 ## 🖥️ 화면 구성도
 
----
-## 배포
+<img src="https://github.com/user-attachments/assets/4681f7bc-f695-4e6f-8599-0ff2995566e7" width="50%"/>
 
-https://dusdn3391.github.io/kosta311/
+---
+
+## 🚀 배포
+
+🔗 [https://dusdn3391.github.io/kosta311/](https://dusdn3391.github.io/kosta311/)
 
 ---
 
