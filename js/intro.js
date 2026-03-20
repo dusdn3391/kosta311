@@ -48,7 +48,7 @@ function showRedirectMessage() {
 
 // ── main.html로 이동 ───────────────────────────────────
 function goToMain() {
-  window.location.href = 'main.html';
+  window.location.href = 'html/main.html';
 }
 
 // ── 클릭 이벤트 ───────────────────────────────────────
