@@ -46,8 +46,7 @@
 | `goToMain()` | `window.location.href`로 main.html 이동 |
 | `handleClick()` | 클릭 이벤트 등록. `blown` 플래그로 중복 클릭 방지 |
 
-- 외부 라이브러리 없이 Vanilla JS로만 구현
-- `setTimeout`으로 촛불 끄기(즉시) → 메시지 전환(0.45초) → 페이지 이동(2초) 순서로 타이밍 제어
+- `setTimeout`으로 촛불 끄기(즉시) → 메시지 전환(0.45초) → 페이지 이동(3초) 순서로 타이밍 제어
 
 ---
 
