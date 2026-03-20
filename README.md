@@ -52,9 +52,9 @@
 ---
 
 ## 🖥️ 화면 구성도
-<img src="https://github.com/user-attachments/assets/e2b3f64e-5b53-4866-a2c2-ad56d0563c12" width="50% />
+<img src="https://github.com/user-attachments/assets/e2b3f64e-5b53-4866-a2c2-ad56d0563c12" width="50%" />
 <img src="https://github.com/user-attachments/assets/4681f7bc-f695-4e6f-8599-0ff2995566e7" width="50%"/>
-<img src="https://github.com/user-attachments/assets/e2b3f64e-5b53-4866-a2c2-ad56d0563c12" width="50% />
+<img src="https://github.com/user-attachments/assets/e2b3f64e-5b53-4866-a2c2-ad56d0563c12" width="50%"/>
 
 ---
 
