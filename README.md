@@ -31,7 +31,6 @@
 | `fade-in` | 이동 안내 메시지가 아래에서 위로 페이드인 |
 
 - 배경은 `radial-gradient`로 중앙이 밝은 짙은 초콜릿 분위기 연출
-- 전체 폰트는 `Georgia` serif 계열로 유럽풍 감성 적용
 - 케이크 SVG에 `drop-shadow` 필터로 황금빛 그림자 추가
 
 ---
