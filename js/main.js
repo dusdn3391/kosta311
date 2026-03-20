@@ -35,7 +35,7 @@ function goTo(i) {
   // 숫자 표시 (페이지 기준)
   countEl.textContent = `${current + 1} / ${totalPage}`;
 
-  // 프로그레스 바
+  
   progressEl.style.width = `${((current + 1) / totalPage) * 100}%`;
 }
 
@@ -83,15 +83,12 @@ wrapper.addEventListener("touchend", (e) => {
   else if (d < -50) goTo(current - 1);
 });
 
-// ─── 반응형 대응 ───
 window.addEventListener("resize", () => {
   goTo(current);
 });
 
-// ─── 초기 실행 (🔥 핵심) ───
 goTo(0);
 
-// ─── SCROLL REVEAL ───
 const revealEls = document.querySelectorAll(".reveal");
 
 const obs = new IntersectionObserver(
