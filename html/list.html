@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>레시피 결과</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/list.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../html/main.html" class="logo"
+        >The Baker's <span>Atelier</span></a
+      >
+      <div class="header-search">
+        <input
+          type="text"
+          id="ingredients"
+          placeholder="재료 입력 (egg, milk...)"
+        />
+        <button id="searchBtn">검색</button>
+      </div>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">소개</a>
+        <a href="#recipes">레시피</a>
+      </nav>
+    </header>
+
+    <section style="padding: 120px 60px">
+      <h2>🍰 레시피 결과</h2>
+      <div id="result" style="margin-top: 40px"></div>
+    </section>
+
+    <script src="../js/list.js"></script>
+  </body>
+</html>

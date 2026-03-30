@@ -1,3 +1,13 @@
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const input = document.getElementById("ingredients").value.trim();
+
+  if (!input) {
+    alert("재료를 입력해주세요!");
+    return;
+  }
+
+  location.href = `list.html?ingredients=${encodeURIComponent(input)}`;
+});
 // ─── SLIDER ───
 const track = document.getElementById("sliderTrack");
 const cards = track.querySelectorAll(".cake-card");
@@ -35,7 +45,6 @@ function goTo(i) {
   // 숫자 표시 (페이지 기준)
   countEl.textContent = `${current + 1} / ${totalPage}`;
 
-  
   progressEl.style.width = `${((current + 1) / totalPage) * 100}%`;
 }
 
