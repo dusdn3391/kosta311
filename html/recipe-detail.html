@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레시피 상세 | The Baker's Atelier</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/recipe.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <a href="./main.html" class="logo">
+        The Baker's <span>Atelier</span>
+      </a>
+      <a href="./main.html" class="back-link">갤러리로 돌아가기</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="recipe-hero">
+      <div class="hero-img">
+        <img id="image" src="" alt="레시피 이미지" />
+      </div>
+
+      <div class="hero-info">
+        <span class="recipe-category">Recipe</span>
+
+        <h1 class="recipe-title" id="title"></h1>
+
+        <div class="hero-divider"></div>
+
+        <div class="recipe-meta">
+          <div class="meta-item">
+            <span class="meta-label">조리 시간</span>
+            <span class="meta-value" id="time">-</span>
+          </div>
+
+          <div class="meta-item">
+            <span class="meta-label">인분</span>
+            <span class="meta-value" id="servings">-</span>
+          </div>
+        </div>
+
+        <p class="recipe-intro" id="desc"></p>
+
+        <div class="hero-deco">API</div>
+      </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="ingredients-section">
+      <div class="ingredients-inner">
+        <span class="section-eyebrow reveal">Ingredients</span>
+        <h2 class="section-title reveal">재료 <em>목록</em></h2>
+
+        <div class="ingredients-table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 60%">재료</th>
+                <th style="width: 40%">양</th>
+              </tr>
+            </thead>
+
+            <tbody id="ingredients"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="recipe-section">
+      <div class="recipe-inner">
+        <span class="section-eyebrow reveal">Steps</span>
+        <h2 class="section-title reveal">만드는 <em>방법</em></h2>
+
+        <ol class="steps-list" id="steps"></ol>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">The Baker's <span>Atelier</span></div>
+      <p class="footer-copy">&copy; 2026 · All Rights Reserved</p>
+    </footer>
+
+    <!-- JS -->
+    <script>
+      const API_KEY = "e309c86e167948bd964c7add5e43695a";
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      fetch(
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          renderRecipe(data);
+        });
+
+      function renderRecipe(data) {
+    
+        document.getElementById("title").innerHTML = data.title;
+
+        
+        document.getElementById("image").src = data.image;
+
+        
+        document.getElementById("desc").innerHTML =
+          data.summary || "설명이 없습니다.";
+
+        
+        document.getElementById("time").innerHTML =
+          data.readyInMinutes + " 분";
+
+        document.getElementById("servings").innerHTML =
+          data.servings + " 인분";
+
+        
+        const ingEl = document.getElementById("ingredients");
+
+        data.extendedIngredients.forEach((ing) => {
+          ingEl.innerHTML += `
+            <tr>
+              <td class="ing-name">${ing.name}</td>
+              <td class="ing-amount">${ing.amount} ${ing.unit}</td>
+            </tr>
+          `;
+        });
+
+        // 만드는 방법
+        const stepsEl = document.getElementById("steps");
+        const steps = data.analyzedInstructions[0]?.steps || [];
+
+        if (steps.length === 0) {
+          stepsEl.innerHTML = "<p>조리 방법이 없습니다 😢</p>";
+          return;
+        }
+
+        steps.forEach((step) => {
+          stepsEl.innerHTML += `
+            <li class="step-item">
+              <span class="step-num">${step.number}</span>
+              <div class="step-content">
+                <p class="step-desc">${step.step}</p>
+              </div>
+            </li>
+          `;
+        });
+      }
+
+      // 스크롤 애니메이션
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>
