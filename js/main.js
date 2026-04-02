@@ -137,7 +137,6 @@ $(window).on("resize", function () {
 
 goTo(0);
 
-// ─── IntersectionObserver (유지 👍) ─────────────────────────────
 const revealEls = document.querySelectorAll(".reveal");
 
 const obs = new IntersectionObserver(
