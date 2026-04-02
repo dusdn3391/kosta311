@@ -1,66 +1,70 @@
-const API_KEY = "e309c86e167948bd964c7add5e43695a";
+const API_KEY = CONFIG.API_KEY;
 
-const result = document.getElementById("result");
-const input = document.getElementById("ingredients");
-const searchBtn = document.getElementById("searchBtn");
+// 👉 jQuery 선택자
+const $result = $("#result");
+const $input = $("#ingredients");
+const $searchBtn = $("#searchBtn");
 
-// 👉 URL에서 값 받아서 최초 실행
+// 👉 URL 파라미터
 const params = new URLSearchParams(window.location.search);
 const initialIngredients = params.get("ingredients");
 
+// 👉 최초 실행
 if (initialIngredients) {
-  input.value = initialIngredients;
+  $input.val(initialIngredients);
   getRecipes(initialIngredients);
 }
 
-// 👉 검색 버튼
-searchBtn.addEventListener("click", () => {
-  const userInput = input.value.trim();
+// 👉 검색 버튼 클릭
+$searchBtn.on("click", function () {
+  const userInput = $input.val().trim();
 
   if (!userInput) {
     alert("재료를 입력해주세요!");
     return;
   }
 
-  // 👉 🔥 한글 → 영어 변환
   const ingredients = translateToEnglish(userInput);
 
-  // 👉 URL은 사용자가 입력한 그대로 유지 (UX 좋음)
-  history.pushState(
-    null,
-    "",
-    `?ingredients=${encodeURIComponent(userInput)}`
-  );
+  // 👉 URL 유지 (UX)
+  history.pushState(null, "", `?ingredients=${encodeURIComponent(userInput)}`);
 
-  // 👉 API에는 변환된 값 전달
   getRecipes(ingredients);
 });
+
 // 👉 엔터 검색
-input.addEventListener("keypress", (e) => {
+$input.on("keypress", function (e) {
   if (e.key === "Enter") {
-    searchBtn.click();
+    $searchBtn.click();
   }
 });
 
+// 👉 핵심: fetch → $.ajax
 function getRecipes(ingredients) {
-  result.innerHTML = "<p>레시피 찾는 중...</p>";
+  $result.html("<p>레시피 찾는 중...</p>");
 
-  fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&number=6&apiKey=${API_KEY}`,
-  )
-    .then((res) => res.json())
-    .then((apiData) => {
+  $.ajax({
+    url: "https://api.spoonacular.com/recipes/findByIngredients",
+    method: "GET",
+    data: {
+      ingredients: ingredients,
+      number: 6,
+      apiKey: API_KEY,
+    },
+    success: function (apiData) {
       const localData = filterMyRecipes(ingredients);
 
-      // 👉 합치기
       const combined = [...localData, ...apiData];
 
       displayRecipes(combined);
-    })
-    .catch(() => {
-      result.innerHTML = "<p>에러 발생 😢</p>";
-    });
+    },
+    error: function () {
+      $result.html("<p>에러 발생 😢</p>");
+    },
+  });
 }
+
+// 👉 내 레시피 필터
 function filterMyRecipes(ingredients) {
   const inputArr = ingredients.split(",").map((i) => i.trim());
 
@@ -72,22 +76,17 @@ function filterMyRecipes(ingredients) {
 // 👉 결과 출력
 function displayRecipes(recipes) {
   if (!recipes || recipes.length === 0) {
-    result.innerHTML = "<p>레시피가 없습니다 😢</p>";
+    $result.html("<p>레시피가 없습니다 😢</p>");
     return;
   }
 
-  result.innerHTML = "";
+  $result.empty();
 
   recipes.forEach((recipe) => {
-    // 👉 내 레시피 vs API 구분
     const isLocal = recipe.source === "local";
 
-    result.innerHTML += `
-      <div class="card" onclick="${
-        isLocal
-          ? `location.href='${recipe.link}'`
-          : `location.href='recipe-detail.html?id=${recipe.id}'`
-      }">
+    const card = `
+      <div class="card" data-id="${recipe.id}" data-link="${recipe.link || ""}" data-local="${isLocal}">
         <img src="${recipe.image}" width="100%">
         <h3>${recipe.title}</h3>
         <span style="color:${isLocal ? "gold" : "gray"}">
@@ -95,10 +94,19 @@ function displayRecipes(recipes) {
         </span>
       </div>
     `;
+
+    $result.append(card);
   });
 }
 
-// 👉 상세 페이지 이동 (🔥 추가 핵심)
-function goDetail(id) {
-  location.href = `recipe-detail.html?id=${id}`;
-}
+// 👉 카드 클릭 (이벤트 위임 👍)
+$result.on("click", ".card", function () {
+  const isLocal = $(this).data("local");
+
+  if (isLocal) {
+    location.href = $(this).data("link");
+  } else {
+    const id = $(this).data("id");
+    location.href = `recipe-detail.html?id=${id}`;
+  }
+});

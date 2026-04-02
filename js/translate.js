@@ -8,10 +8,15 @@ const translateMap = {
   밀가루: "flour",
   소금: "salt",
   크림: "cream",
+  이스트: "yeast",
   치즈: "cheese",
   초콜릿: "chocolate",
   바닐라: "vanilla",
   오일: "oil",
+  생크림: "whipped cream",
+  코코아파우더: "cocoa powder",
+  과일: "fruit",
+  커피: "coffee",
 
   케이크: "cake",
   빵: "bread",
@@ -19,11 +24,6 @@ const translateMap = {
   머핀: "muffin",
   파스타: "pasta",
   피자: "pizza",
-
-  닭고기: "chicken",
-  소고기: "beef",
-  돼지고기: "pork",
-  쌀: "rice",
 };
 
 function translateToEnglish(text) {
