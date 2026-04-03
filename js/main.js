@@ -52,7 +52,12 @@ $("#searchBtn").on("click", function () {
 
   location.href = `list.html?ingredients=${encodeURIComponent(translated)}`;
 });
-
+addEventListener
+$("#ingredients").on("keypress", function (e) {
+  if (e.key === "Enter") {
+    $("#searchBtn").click();
+  }
+});
 // ─── SLIDER ─────────────────────────────
 const $track = $("#sliderTrack");
 const $cards = $track.find(".cake-card");
@@ -119,9 +124,6 @@ $wrapper.on("mouseleave", function () {
 });
 
 // ─── 터치 스와이프 (이건 JS 유지 👍) ─────────────────────────────
-$wrapper[0].addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
 
 $wrapper[0].addEventListener("touchend", (e) => {
   const d = startX - e.changedTouches[0].clientX;
