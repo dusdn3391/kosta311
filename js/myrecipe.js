@@ -36,7 +36,7 @@ const myRecipes = [
       "cocoa powder",
     ],
     source: "local",
-    link: "./madulen.html",
+    link: "./chocolatemuffin.html",
   },
   {
     id: "my-5",
