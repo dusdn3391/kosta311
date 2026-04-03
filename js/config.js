@@ -1,3 +1,3 @@
 const CONFIG = {
-  API_KEY: "e309c86e167948bd964c7add5e43695a",
+  API_KEY: "86012edef7334bbfbedfd0014a992305",
 };
