@@ -6,13 +6,39 @@
 
 ## 📁 파일 구조
 ```
-📁 프로젝트 폴더
-├── index.html      # 인트로 페이지 구조 (SVG 케이크 + 텍스트)
-├── intro.css       # 스타일 (촛불 애니메이션, 파티클, 배경 등)
-├── intro.js        # 로직 (파티클 생성, 클릭 이벤트, 페이지 이동)
-├── main.html       # 메인 페이지 (별도 제작)
-├── recipe-*.html   # 레시피 페이지 등등
-└── README.md
+📁 KOSTA311
+├── index.html                  # 인트로 페이지 (SVG 케이크 + 촛불 애니메이션)
+├── .gitignore
+├── README.md
+│
+├── 📁 css
+│   ├── intro.css               # 인트로 스타일 (촛불 애니메이션, 파티클, 배경)
+│   ├── list.css                # 레시피 목록 페이지 스타일
+│   ├── main.css                # 메인 페이지 스타일
+│   └── recipe.css              # 레시피 상세 페이지 스타일
+│
+├── 📁 html
+│   ├── main.html               # 메인 페이지
+│   ├── list.html               # 레시피 목록 (Spoonacular API 연동)
+│   ├── recipe-detail.html      # 레시피 상세 페이지
+│   ├── recipe-chocolate.html   # 초콜릿 레시피
+│   ├── recipe-normalcake.html  # 일반 케이크 레시피
+│   ├── recipe-tiramisu.html    # 티라미수 레시피
+│   ├── chocolate.html          # 초콜릿 소개 페이지
+│   ├── chocomuffin.html        # 초코 머핀 소개 페이지
+│   ├── madulen.html            # 마들렌 소개 페이지
+│   └── pepero.html             # 빼빼로 소개 페이지
+│
+├── 📁 js
+│   ├── intro.js                # 인트로 로직 (파티클 생성, 클릭 이벤트, 페이지 이동)
+│   ├── main.js                 # 메인 페이지 로직
+│   ├── list.js                 # 레시피 목록 로직 (AJAX, 데이터 병합)
+│   ├── myrecipe.js             # 자체 작성 레시피 데이터
+│   ├── translate.js            # 번역 기능 (Papago API 시도)
+│   └── config.js               # API 키 등 환경 설정
+│
+└── 📁 img
+    └── (이미지 리소스)
 ```
 
 ---
